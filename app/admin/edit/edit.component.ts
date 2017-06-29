@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from "../admin.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-edit',
@@ -13,7 +14,7 @@ export class EditComponent implements OnInit {
   doc_pwd:string;
   doc_license:string;
   editresult:string;
-  constructor(private adminservice:AdminService) { }
+  constructor(private adminservice:AdminService, private route:Router) { }
   ngOnInit() {
     this.doc_id=this.adminservice.doctor_detail.doc_id;
     this.doc_name=this.adminservice.doctor_detail.doc_name;
@@ -28,5 +29,9 @@ export class EditComponent implements OnInit {
 
     })
   }
+  back(){
+    this.route.navigate(['./admin']);
+  }
+
 
 }

@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var admin_service_1 = require("../admin.service");
+var router_1 = require("@angular/router");
 var EditComponent = (function () {
-    function EditComponent(adminservice) {
+    function EditComponent(adminservice, route) {
         this.adminservice = adminservice;
+        this.route = route;
     }
     EditComponent.prototype.ngOnInit = function () {
         this.doc_id = this.adminservice.doctor_detail.doc_id;
@@ -27,13 +29,16 @@ var EditComponent = (function () {
             _this.editresult = data;
         });
     };
+    EditComponent.prototype.back = function () {
+        this.route.navigate(['./admin']);
+    };
     EditComponent = __decorate([
         core_1.Component({
             selector: 'app-edit',
             templateUrl: './edit.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [admin_service_1.AdminService])
+        __metadata('design:paramtypes', [admin_service_1.AdminService, router_1.Router])
     ], EditComponent);
     return EditComponent;
 }());

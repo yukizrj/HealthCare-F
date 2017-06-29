@@ -11,7 +11,14 @@ export class AdminService {
     li:string;
     liname:string;
     liemail:string;
-    doctor_detail:{};
+    doctor_detail:{
+        "doc_id":string;
+        "doc_email": string,
+        "doc_name": string,
+        "doc_spe": string,
+        "doc_pwd": string,
+        "doc_license":string
+    };
     constructor(private http: Http, private memory:MemoryService) { }
     addDoctor(email, license, name, pwd, spe_id){
         let params: URLSearchParams=new URLSearchParams();

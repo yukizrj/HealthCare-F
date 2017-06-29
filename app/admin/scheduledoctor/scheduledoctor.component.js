@@ -11,6 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ScheduledoctorComponent = (function () {
     function ScheduledoctorComponent() {
+        this.weekday = {
+            "1": "Monday",
+            "2": "Tuesday",
+            "3": "Wednesday",
+            "4": "Thursday",
+            "5": "Friday",
+        };
     }
     ScheduledoctorComponent.prototype.ngOnInit = function () {
     };
