@@ -1,0 +1,43 @@
+<p style="margin-top: 50px"></p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a href="#pablo">
+              <img class="img" src="../../assets/img/faces/admin2.png" />
+            </a>
+          </div>
+        </div>
+
+          <div class="content">
+            <h4 class="title">Admin Change Password</h4>
+            <p class="category"></p>
+          </div>
+          <div class="card-content">
+            <form>
+              <div class="row">
+
+                <div class="col-md-12">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Password</label>
+                    <input type="text" class="form-control" #pwd required="required" minlength="4">
+                    <span *ngIf="pwd.errors && (pwd.dirty || pwd.touched)"
+                          class="alert alert-danger">
+                    <div [hidden]="!pwd.errors.minlength">
+                      Password must be at least 4 characters long.
+                    </div>
+                  </span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-info btn-round" (click)="profileChange(pwd.value)">Submit Change</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+

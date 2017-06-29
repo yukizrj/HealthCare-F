@@ -1,0 +1,47 @@
+<p style="margin-top: 50px"></p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
+          <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Failed!</strong> Please enter right username and password!
+        </div>
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <a href="#pablo">
+              <img class="img" src="../../assets/img/faces/admin2.png" />
+            </a>
+          </div>
+
+          <div class="content">
+            <h4 class="title">Admin Login</h4>
+            <p class="category"></p>
+          </div>
+          <div class="card-content">
+            <form>
+              <div class="row">
+
+                <div class="col-md-12">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Username</label>
+                    <input type="text" class="form-control" #username required="required">
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group form-black label-floating is-empty">
+                    <label class="control-label">Password</label>
+                    <input type="text" class="form-control" #pwd required="required">
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-danger btn-round" (click)="loginSubmit(username.value,pwd.value)">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

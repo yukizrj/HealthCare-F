@@ -1,0 +1,28 @@
+<p style="margin-top: 50px"></p>
+<div class="row">
+
+  <div class="col-md-offset-2 col-md-8 col-sm-6">
+    <div class="card card-stats" >
+      <div class="card-header" data-background-color="blue">
+        <i class="material-icons">find_in_page</i>
+      </div>
+      <div class="card-content">
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group form-black is-empty">
+            <label class="control-label">Enter Doctor Name</label>
+            <input type="text" class="form-control" placeholder="Name" #name>
+            <span class="material-input"></span>
+          </div>
+          <button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="searchDoctor(name.value)">
+            <i class="material-icons">search</i><div class="ripple-container"></div>
+          </button>
+        </form>
+      </div>
+      <div class="card-footer">
+        <div class="stats">
+          <i class="material-icons">update</i> Search For Doctor
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

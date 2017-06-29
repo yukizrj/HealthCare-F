@@ -1,0 +1,70 @@
+<router-outlet></router-outlet>
+<div class="row">
+  <p style="margin-top: 50px"></p>
+  <div class="container-fluid">
+    <div class="row" >
+      <div class="col-md-offset-2 col-md-8">
+        <div *ngIf="editresult=='1'" class="alert alert-success alert-dismissable">
+          <a href="deletedoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> Doctor updated
+        </div>
+        <div *ngIf="editresult=='0'" class="alert alert-danger alert-dismissable">
+          <a href="deletedoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Failed!</strong> Doctor information wrong!
+        </div>
+        <div class="card">
+          <div class="card-header" data-background-color="red">
+            <h4 class="title">Edit Doctor</h4>
+            <p class="category">Enter doctor information</p>
+          </div>
+          <div class="card-content">
+            <form>
+              <input type="hidden" #eid value={{doc_id}}> <!--value={{editdata.charAt(0)}}-->
+              <input type="hidden" #elicense value={{doc_license}}>
+              <input type="hidden" #epwd value={{doc_pwd}}>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-black is-empty">
+                    <label class="control-label">Name</label>
+                    <input type="text" class="form-control" #ename required="required" value={{doc_name}}> <!--value={{editdata.charAt(2)}}-->
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-black is-empty">
+                    <label class="control-label">Email address</label>
+                    <input type="email" class="form-control" #eemail value={{doc_email}}> <!--value={{editdata.charAt(1)}}-->
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group form-black  is-empty">
+                    <label class="control-label">Specialization</label>
+                    <select class="form-control" #espe_id>
+                      <option value="CARDIOLOGIST">CARDIOLOGIST</option>
+                      <option value="DENTIST">DENTIST</option>
+                      <option value="ENT">ENT</option>
+                      <option value="GYNECOLOGIST">GYNECOLOGIST</option>
+                      <option value="PEDIATRICIAN">PEDIATRICIAN</option>
+                      <option value="UROLOGIST">UROLOGIST</option>
+                      <option value="HEMATOLOGIST">HEMATOLOGIST</option>
+                      <option value="HEPATOLOGIST">HEPATOLOGIST</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-danger pull-right" (click)="editDoctor(elicense.value,eemail.value, ename.value, espe_id.value, eid.value, epwd.value)" >Add</button>
+              <div class="clearfix"></div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
