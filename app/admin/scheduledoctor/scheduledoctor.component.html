@@ -1,14 +1,23 @@
-<div class="col-lg-6 col-md-12">
+
+<div class="col-md-offset-2 col-md-8">
+  <div *ngIf="result=='1'" class="alert alert-success alert-dismissable">
+    <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> Doctor added
+  </div>
+  <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
+    <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Failed!</strong> Doctor information wrong!
+  </div>
   <div class="card card-nav-tabs" >
     <div class="card-header" data-background-color="purple">
       <div class="nav-tabs-navigation">
         <div class="nav-tabs-wrapper">
-          <span class="nav-tabs-title">Tasks:</span>
+          <span class="nav-tabs-title">Doctor Schedule:</span>
           <ul class="nav nav-tabs" data-tabs="tabs">
             <li class="active">
               <a href="#profile" data-toggle="tab">
-                <i class="material-icons">bug_report</i>
-                Bugs
+                <i class="material-icons">schedule</i>
+                Schedule
                 <div class="ripple-container"></div></a>
             </li>
           </ul>
@@ -19,90 +28,153 @@
     <div class="card-content">
       <div class="tab-content">
         <div class="tab-pane active" id="profile">
+          <form>
           <table class="table">
             <tbody>
             <tr>
-              <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+             Doctor License:
+              <input type="text" class="form-control" #license>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="1" #mday> Monday
+              </td>
+              <td>
+                From:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #mbegin>
+                  <span class="input-group-addon">：00</span>
+                </div>
+              </td>
+              <td>
+                To:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #mend>
+                  <span class="input-group-addon">：00</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="2" #tuday> Tuesday
+              </td>
+              <td>
+                From:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #tubegin>
+                  <span class="input-group-addon">：00</span>
+                </div>
+              </td>
+              <td>
+                To:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #tuend>
+                  <span class="input-group-addon">：00</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="3" #wday> Wednesday
+              </td>
+              <td>
+                From:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #wbegin>
+                  <span class="input-group-addon">：00</span>
+                </div>
+              </td>
+              <td>
+                To:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #wend>
+                  <span class="input-group-addon">:00</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="4" #tday> Thursday
+              </td>
+              <td>
+                From:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #tbegin>
+                  <span class="input-group-addon">:00</span>
+                </div>
+              </td>
+              <td>
+                To:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #tend>
+                  <span class="input-group-addon">:00</span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" value="5" #fday> Friday
+              </td>
+              <td>
+                From:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #fbegin>
+                  <span class="input-group-addon">:00</span>
+                </div>
+              </td>
+              <td>
+                To:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #fend>
+                  <span class="input-group-addon">:00</span>
+                </div>
+              </td>
 
-              div class="form-group input-group">
-              <input type="number" class="form-control">
-              <span class="input-group-addon">.00</span>
-                </div>
+            </tr>
+            <tr>
               <td>
+                <input type="checkbox" value="6" #sday> Saturday
+              </td>
+              <td>
+                From:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #sbegin>
+                  <span class="input-group-addon">:00</span>
+                </div>
+              </td>
+              <td>
+                To:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #send>
+                  <span class="input-group-addon">:00</span>
+                </div>
+              </td>
 
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="optionsCheckboxes" checked>
-                  </label>
-                </div>
-              </td>
-              <td>Sign contract for "What are conference organizers afraid of?"</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                  <i class="material-icons">edit</i>
-                </button>
-                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                  <i class="material-icons">close</i>
-                </button>
-              </td>
             </tr>
             <tr>
               <td>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="optionsCheckboxes">
-                  </label>
-                </div>
+                <input type="checkbox" value="7" #suday> Sunday
               </td>
-              <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                  <i class="material-icons">edit</i>
-                </button>
-                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                  <i class="material-icons">close</i>
-                </button>
-              </td>
-            </tr>
-            <tr>
               <td>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="optionsCheckboxes">
-                  </label>
+                From:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #subegin>
+                  <span class="input-group-addon">:00</span>
                 </div>
               </td>
-              <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-              </td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                  <i class="material-icons">edit</i>
-                </button>
-                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                  <i class="material-icons">close</i>
-                </button>
-              </td>
-            </tr>
-            <tr>
               <td>
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="optionsCheckboxes" checked>
-                  </label>
+                To:
+                <div class="input-group">
+                  <input type="number" class="form-control" min="8" max="18"  #suend>
+                  <span class="input-group-addon">:00</span>
                 </div>
               </td>
-              <td>Create 4 Invisible User Experiences you Never Knew About</td>
-              <td class="td-actions text-right">
-                <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-simple btn-xs">
-                  <i class="material-icons">edit</i>
-                </button>
-                <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                  <i class="material-icons">close</i>
-                </button>
-              </td>
+
             </tr>
             </tbody>
           </table>
+            <button type="submit" class="btn btn-danger btn-round" (click)="scheduledata(license.value,mday.checked,mbegin.value,mend.value,tuday.checked,tubegin.value, tuend.value,wday.checked, wbegin.value,wend.value,tday.checked,tbegin.value,tend.value,fday.checked, fbegin.value, fend.value,sday.checked,sbegin.value,send.value,suday.checked,subegin.value,suend.value)">Save</button>
+          </form>
         </div>
       </div>
     </div>

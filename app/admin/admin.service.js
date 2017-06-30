@@ -81,6 +81,15 @@ var AdminService = (function () {
             return res.json();
         });
     };
+    AdminService.prototype.schedule = function (license, totalstring) {
+        var params = new http_1.URLSearchParams();
+        params.set("schedule", totalstring);
+        var body = params;
+        return this.http.post('http://localhost:9090/doctor-schedule-save/' + license, body)
+            .map(function (res) {
+            return res.json();
+        });
+    };
     AdminService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http, memory_service_1.MemoryService])

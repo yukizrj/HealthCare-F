@@ -105,4 +105,16 @@ export class AdminService {
             )
 
     }
+    schedule(license,totalstring){
+        let params:URLSearchParams=new URLSearchParams();
+        params.set("schedule",totalstring);
+        let body=params;
+        return this.http.post('http://localhost:9090/doctor-schedule-save/'+license, body)
+            .map(
+                (res:Response)=>
+                {
+                    return res.json();
+                }
+            )
+    }
 }

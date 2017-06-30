@@ -36,6 +36,8 @@ import {PatientRegisterService} from "./patient-register/patient-register.servic
 import {MemoryService} from "./memory.service";
 import {PatientloginService} from "./patient-login/patient-login.service";
 import {EditComponent} from "./admin/edit/edit.component";
+import {DeletePatientComponent} from "./patient/delete-patient/delete-patient.component";
+import {PatientService} from "./patient/patient.service";
 
 @NgModule({
     imports:      [
@@ -66,9 +68,17 @@ import {EditComponent} from "./admin/edit/edit.component";
         PatientLoginComponent,
         AdminLoginComponent,
         PatientRegisterComponent,
-        EditComponent
+        EditComponent,
+        DeletePatientComponent
     ],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, AdminloginService, AdminService, PatientRegisterService, MemoryService, PatientloginService],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
+        AdminloginService,
+        AdminService,
+        PatientRegisterService,
+        MemoryService,
+        PatientloginService,
+        PatientService
+    ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

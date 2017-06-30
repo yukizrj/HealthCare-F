@@ -14,6 +14,7 @@ var NewAppointmentComponent = (function () {
     }
     NewAppointmentComponent.prototype.ngOnInit = function () {
     };
+    NewAppointmentComponent.prototype.searchDoctor = function (dt, spe_id) { };
     NewAppointmentComponent = __decorate([
         core_1.Component({
             selector: 'app-new-appointment',

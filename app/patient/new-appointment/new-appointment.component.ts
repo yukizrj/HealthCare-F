@@ -12,4 +12,5 @@ export class NewAppointmentComponent implements OnInit {
   ngOnInit() {
   }
 
+  searchDoctor(dt,spe_id){}
 }

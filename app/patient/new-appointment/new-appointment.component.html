@@ -1,3 +1,10 @@
+<script language="javascript">
+    $(document).ready(function () {
+        $("#datepicker").datepicker({
+            minDate: 0
+        });
+    });
+</script>
 <p style="margin-top: 50px"></p>
 <div class="row">
 
@@ -9,11 +16,31 @@
       <div class="card-content">
         <form class="navbar-form navbar-right" role="search">
           <div class="form-group form-black is-empty">
-            <label class="control-label">Enter Doctor Name</label>
-            <input type="text" class="form-control" placeholder="Name" #name>
-            <span class="material-input"></span>
+            <label class="control-label">Select Date</label>
+            <input type="date" id="datepicker" class="form-control" #dt>
+            <span class="material-icons">date_range</span>
           </div>
-          <button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="searchDoctor(name.value)">
+          <!--<label for="apointment-date"> Date</label>
+          <div class="input-group date" id="datepicker">
+            <input class="form-control" id="appintmentDate" type="date" required>
+            <span class="input-group-addon">
+             <span class="glyphicon glyphicon-calendar"></span>
+         </span>
+          </div>-->
+          <div class="form-group form-black is-empty">
+            <label class="control-label">Specialization</label>
+            <select class="form-control" #spe_id>
+              <option value="CARDIOLOGIST">CARDIOLOGIST</option>
+              <option value="DENTIST">DENTIST</option>
+              <option value="ENT">ENT</option>
+              <option value="GYNECOLOGIST">GYNECOLOGIST</option>
+              <option value="PEDIATRICIAN">PEDIATRICIAN</option>
+              <option value="UROLOGIST">UROLOGIST</option>
+              <option value="HEMATOLOGIST">HEMATOLOGIST</option>
+              <option value="HEPATOLOGIST">HEPATOLOGIST</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="searchDoctor(dt.value,spe_id.value)">
             <i class="material-icons">search</i><div class="ripple-container"></div>
           </button>
         </form>

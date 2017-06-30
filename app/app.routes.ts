@@ -23,6 +23,7 @@ import {AdminLoginComponent} from "./admin-login/admin-login.component";
 import {PatientRegisterComponent} from "./patient-register/patient-register.component";
 import {HomeComponent} from "./home/home.component";
 import {EditComponent} from "./admin/edit/edit.component";
+import {DeletePatientComponent} from "./patient/delete-patient/delete-patient.component";
 const appRoutes:Routes=[
     {path:'',component:HomeComponent},
     {path:'doctor-login',component:DoctorLoginComponent},
@@ -34,7 +35,8 @@ const appRoutes:Routes=[
 
             {path:'patient-profile',component:PatientProfileComponent},
             {path:'new-appointment',component:NewAppointmentComponent},
-            {path:'view-appointment',component:ViewAppointmentComponent}
+            {path:'view-appointment',component:ViewAppointmentComponent},
+            {path:'delete-patient',component:DeletePatientComponent},
         ]
     },
     {path:'doctors',component:DoctorsComponent,

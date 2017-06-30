@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MemoryService} from "../memory.service";
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   moduleId: module.id,
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  result:string;
+  constructor(private memory:MemoryService) { }
 
   ngOnInit() {
+    this.result=this.memory.current_patient;
+    console.log("delete item"+this.memory.current_patient);
   }
 
 }

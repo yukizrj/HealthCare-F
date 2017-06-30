@@ -43,6 +43,8 @@ var patient_register_service_1 = require("./patient-register/patient-register.se
 var memory_service_1 = require("./memory.service");
 var patient_login_service_1 = require("./patient-login/patient-login.service");
 var edit_component_1 = require("./admin/edit/edit.component");
+var delete_patient_component_1 = require("./patient/delete-patient/delete-patient.component");
+var patient_service_1 = require("./patient/patient.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -76,9 +78,17 @@ var AppModule = (function () {
                 patient_login_component_1.PatientLoginComponent,
                 admin_login_component_1.AdminLoginComponent,
                 patient_register_component_1.PatientRegisterComponent,
-                edit_component_1.EditComponent
+                edit_component_1.EditComponent,
+                delete_patient_component_1.DeletePatientComponent
             ],
-            providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }, adminlogin_service_1.AdminloginService, admin_service_1.AdminService, patient_register_service_1.PatientRegisterService, memory_service_1.MemoryService, patient_login_service_1.PatientloginService],
+            providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
+                adminlogin_service_1.AdminloginService,
+                admin_service_1.AdminService,
+                patient_register_service_1.PatientRegisterService,
+                memory_service_1.MemoryService,
+                patient_login_service_1.PatientloginService,
+                patient_service_1.PatientService
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

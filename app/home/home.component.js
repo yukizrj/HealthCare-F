@@ -9,10 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var memory_service_1 = require("../memory.service");
 var HomeComponent = (function () {
-    function HomeComponent() {
+    function HomeComponent(memory) {
+        this.memory = memory;
     }
     HomeComponent.prototype.ngOnInit = function () {
+        this.result = this.memory.current_patient;
+        console.log("delete item" + this.memory.current_patient);
     };
     HomeComponent = __decorate([
         core_1.Component({
@@ -20,7 +24,7 @@ var HomeComponent = (function () {
             templateUrl: './home.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [memory_service_1.MemoryService])
     ], HomeComponent);
     return HomeComponent;
 }());
