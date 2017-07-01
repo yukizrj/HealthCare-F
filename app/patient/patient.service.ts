@@ -9,10 +9,11 @@ export class PatientService {
 
     constructor(private http: Http, private memory:MemoryService) { }
 
-    delete(){
+    delete(pwd){
 
        let params: URLSearchParams=new URLSearchParams();
-        params.set('email', this.memory.current_patient);
+        params.set('id', this.memory.current_patient);
+        params.set("pwd",pwd);
         let body=params;
         return this.http.post('http://localhost:9090/patient-delete', body)
             .map(

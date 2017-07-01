@@ -1,13 +1,21 @@
-<div class="col-lg-3 col-md-6 col-sm-6">
+<p style="margin-top: 100px"></p>
+<div class="col-md-offset-3 col-md-6">
+  <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
+    <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Failed!</strong> Your password in incorrect
+  </div>
   <div class="card card-stats" >
-    <div class="card-header" data-background-color="orange">
-      <i class="material-icons">delete</i>
+    <div class="card-header" data-background-color="red">
+      <i class="material-icons">info_outline</i>
     </div>
+    <form>
     <div class="card-content">
       <p class="category">Are you sure to delete your account?</p>
+      <input type="password" class="form-control" #pwd>Enter your password
     </div>
     <div class="card-footer">
-      <button class="btn btn-danger btn-round" (click)="delete()">Delete</button>
+      <button class="btn btn-danger btn-round" (click)="delete(pwd.value)">Delete Anyway</button>
     </div>
+    </form>
   </div>
 </div>

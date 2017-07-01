@@ -2,11 +2,11 @@
 <div class="col-md-offset-2 col-md-8">
   <div *ngIf="result=='1'" class="alert alert-success alert-dismissable">
     <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Success!</strong> Doctor added
+    <strong>Success!</strong> Doctor schedule added!
   </div>
   <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
     <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Failed!</strong> Doctor information wrong!
+    <strong>Failed!</strong> Doctor license number not found
   </div>
   <div class="card card-nav-tabs" >
     <div class="card-header" data-background-color="purple">

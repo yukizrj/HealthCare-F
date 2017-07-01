@@ -17,8 +17,8 @@ export class DeletePatientComponent implements OnInit {
   }
 
 
-  delete(){
-    this.patientservice.delete().subscribe((data)=>{
+  delete(pwd:string){
+    this.patientservice.delete(pwd).subscribe((data)=>{
       this.result=data;
       if(this.result=="1"){
         this.memory.current_patient="0";
