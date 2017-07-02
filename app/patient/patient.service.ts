@@ -21,4 +21,17 @@ export class PatientService {
             )
 
     }
+
+    searchDoctor(dt,spec,id){
+        let params:URLSearchParams=new URLSearchParams();
+        params.set("dt",dt);
+        params.set("spec",spec);
+        params.set("id",id);
+        let body=params;
+        return this.http.post('http://localhost:9090/appointment-browse', body)
+            .map(
+                (res:Response)=>res.json()
+            )
+
+    }
 }

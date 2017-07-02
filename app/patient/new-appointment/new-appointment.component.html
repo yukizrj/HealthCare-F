@@ -1,9 +1,17 @@
-<script language="javascript">
+<script>
     $(document).ready(function () {
         $("#datepicker").datepicker({
             minDate: 0
         });
     });
+</script>
+<script>
+    function myFunction() {
+        var d = document.getElementById("pdate").value;
+        var n = d.getDay();
+        document.getElementById("demo").innerHTML = n;
+        console.log(n);
+    }
 </script>
 <p style="margin-top: 50px"></p>
 <div class="row">
@@ -17,9 +25,10 @@
         <form class="navbar-form navbar-right" role="search">
           <div class="form-group form-black is-empty">
             <label class="control-label">Select Date</label>
-            <input type="text" id="datepicker" class="form-control" #dt>
+            <input type="date" id="pdate" min="2017-07-03" class="form-control" #dt>
             <span class="material-icons">date_range</span>
           </div>
+          <p id="demo" #week></p>
           <!--<label for="apointment-date"> Date</label>
           <div class="input-group date" id="datepicker">
             <input class="form-control" id="appintmentDate" type="date" required>
@@ -29,7 +38,7 @@
           </div>-->
           <div class="form-group form-black is-empty">
             <label class="control-label">Specialization</label>
-            <select class="form-control" #spe_id>
+            <select class="form-control" #spec>
               <option value="CARDIOLOGIST">CARDIOLOGIST</option>
               <option value="DENTIST">DENTIST</option>
               <option value="ENT">ENT</option>
@@ -40,7 +49,7 @@
               <option value="HEPATOLOGIST">HEPATOLOGIST</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="searchDoctor(dt.value,spe_id.value)">
+          <button type="submit" class="btn btn-white btn-round btn-just-icon" (click)="searchDoctor(dt.value,spec.value)">
             <i class="material-icons">search</i><div class="ripple-container"></div>
           </button>
         </form>
