@@ -8,33 +8,7 @@ import {MemoryService} from "../../memory.service";
   moduleId: module.id,
 })
 export class NewAppointmentComponent implements OnInit {
- /* result:{
-    "count": number,
-    "map": {
-      string: [
-          {
-            "id": number,
-            "day": number,
-            "begin_time": string,
-            "end_time": string
-          }
-          ]
-    },
-    "o": {
-      "id": null,
-      "doctor": null,
-      "patient": {
-        "id": number,
-        "name": string,
-        "dob": string,
-        "gender": string,
-        "email": string,
-        "password": string
-      },
-      "dt": number,
-      "day": number
-    }
-  }*/
+
  result:Array<any>;
   id:string;
   constructor(private patientservice:PatientService, private memory:MemoryService) { }
@@ -47,7 +21,8 @@ export class NewAppointmentComponent implements OnInit {
     console.log("id is"+this.id);
     this.patientservice.searchDoctor(dt,spec,this.id).subscribe((data)=>{
           this.result=data;
-          
+          console.log("result"+this.result);
+
     })
   }
 

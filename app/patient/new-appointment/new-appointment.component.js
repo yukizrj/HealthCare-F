@@ -24,6 +24,7 @@ var NewAppointmentComponent = (function () {
         console.log("id is" + this.id);
         this.patientservice.searchDoctor(dt, spec, this.id).subscribe(function (data) {
             _this.result = data;
+            console.log("result" + _this.result);
         });
     };
     NewAppointmentComponent = __decorate([
