@@ -46,6 +46,8 @@ var edit_component_1 = require("./admin/edit/edit.component");
 var delete_patient_component_1 = require("./patient/delete-patient/delete-patient.component");
 var patient_service_1 = require("./patient/patient.service");
 var book_appointment_component_1 = require("./patient/book-appointment/book-appointment.component");
+var doctor_login_service_1 = require("./doctor-login/doctor-login.service");
+var doctor_service_1 = require("./doctors/doctor.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -89,7 +91,9 @@ var AppModule = (function () {
                 patient_register_service_1.PatientRegisterService,
                 memory_service_1.MemoryService,
                 patient_login_service_1.PatientloginService,
-                patient_service_1.PatientService
+                patient_service_1.PatientService,
+                doctor_login_service_1.DoctorloginService,
+                doctor_service_1.DoctorService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

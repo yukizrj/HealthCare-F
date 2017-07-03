@@ -21,7 +21,7 @@ export class DoctorLoginComponent implements OnInit {
       if(this.result!=="0"){
         this.memory.current_doctor=this.result;
         console.log("patient in memory"+this.memory.current_doctor);
-        this.route.navigate(["/doctor"])
+        this.route.navigate(["/doctors"])
       }else{
 
       }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DoctorService} from "../doctor.service";
 
 @Component({
   selector: 'app-doctor-profile',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorProfileComponent implements OnInit {
 
-  constructor() { }
+  result:string;
+  constructor(private doctorservice:DoctorService) { }
 
   ngOnInit() {
+  }
+
+  profileChange(pwd:string){
+    this.doctorservice.profileChange(pwd).subscribe((data)=>
+        {
+          this.result=data;
+
+        }
+    );
   }
 
 }

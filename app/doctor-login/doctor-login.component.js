@@ -9,10 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var doctor_login_service_1 = require("./doctor-login.service");
+var memory_service_1 = require("../memory.service");
+var router_1 = require("@angular/router");
 var DoctorLoginComponent = (function () {
-    function DoctorLoginComponent() {
+    function DoctorLoginComponent(doctorlogin, memory, route) {
+        this.doctorlogin = doctorlogin;
+        this.memory = memory;
+        this.route = route;
     }
     DoctorLoginComponent.prototype.ngOnInit = function () {
+    };
+    DoctorLoginComponent.prototype.loginSubmit = function (license, pwd) {
+        var _this = this;
+        this.doctorlogin.login(license, pwd).subscribe(function (data) {
+            _this.result = data;
+            if (_this.result !== "0") {
+                _this.memory.current_doctor = _this.result;
+                console.log("patient in memory" + _this.memory.current_doctor);
+                _this.route.navigate(["/doctors"]);
+            }
+            else {
+            }
+        });
     };
     DoctorLoginComponent = __decorate([
         core_1.Component({
@@ -20,7 +39,7 @@ var DoctorLoginComponent = (function () {
             templateUrl: './doctor-login.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [doctor_login_service_1.DoctorloginService, memory_service_1.MemoryService, router_1.Router])
     ], DoctorLoginComponent);
     return DoctorLoginComponent;
 }());

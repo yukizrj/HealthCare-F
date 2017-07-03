@@ -40,6 +40,7 @@ import {DeletePatientComponent} from "./patient/delete-patient/delete-patient.co
 import {PatientService} from "./patient/patient.service";
 import {BookAppointmentComponent} from "./patient/book-appointment/book-appointment.component";
 import {DoctorloginService} from "./doctor-login/doctor-login.service";
+import {DoctorService} from "./doctors/doctor.service";
 
 @NgModule({
     imports:      [
@@ -81,7 +82,8 @@ import {DoctorloginService} from "./doctor-login/doctor-login.service";
         MemoryService,
         PatientloginService,
         PatientService,
-        DoctorloginService
+        DoctorloginService,
+        DoctorService
     ],
     bootstrap:    [ AppComponent ]
 })
