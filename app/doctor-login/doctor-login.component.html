@@ -20,20 +20,20 @@
 
                 <div class="col-md-12">
                   <div class="form-group form-black label-floating is-empty">
-                    <label class="control-label">Username</label>
-                    <input type="text" class="form-control" >
+                    <label class="control-label">License Number</label>
+                    <input type="text" class="form-control" #license >
                   </div>
                 </div>
 
                 <div class="col-md-12">
                   <div class="form-group form-black label-floating is-empty">
                     <label class="control-label">Password</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control" #pwd>
                   </div>
                 </div>
               </div>
               <button type="submit" class="btn btn-danger btn-round pull-left" routerLink="/">Cancel</button>
-              <button type="submit" class="btn btn-danger btn-round pull-right" routerLink="/doctors">Login</button>
+              <button type="submit" class="btn btn-primary btn-round pull-right" (click)="loginSubmit(license.value, pwd.value)">Login</button>
             </form>
           </div>
         </div>

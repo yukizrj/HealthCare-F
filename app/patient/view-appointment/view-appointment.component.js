@@ -9,10 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var memory_service_1 = require("../../memory.service");
+var patient_service_1 = require("../patient.service");
 var ViewAppointmentComponent = (function () {
-    function ViewAppointmentComponent() {
+    function ViewAppointmentComponent(memory, patientservice) {
+        this.memory = memory;
+        this.patientservice = patientservice;
     }
     ViewAppointmentComponent.prototype.ngOnInit = function () {
+        this.pat_id = this.memory.current_patient;
+        console.log("pat_id " + this.pat_id);
+    };
+    ViewAppointmentComponent.prototype.view = function (pat_id) {
+        var _this = this;
+        this.patientservice.view(this.pat_id).subscribe(function (data) {
+            _this.result = data;
+        });
     };
     ViewAppointmentComponent = __decorate([
         core_1.Component({
@@ -20,7 +32,7 @@ var ViewAppointmentComponent = (function () {
             templateUrl: './view-appointment.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [memory_service_1.MemoryService, patient_service_1.PatientService])
     ], ViewAppointmentComponent);
     return ViewAppointmentComponent;
 }());

@@ -9,10 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var patient_service_1 = require("../patient.service");
 var PatientProfileComponent = (function () {
-    function PatientProfileComponent() {
+    function PatientProfileComponent(patientservice) {
+        this.patientservice = patientservice;
     }
     PatientProfileComponent.prototype.ngOnInit = function () {
+    };
+    PatientProfileComponent.prototype.profileChange = function (pwd) {
+        var _this = this;
+        this.patientservice.profileChange(pwd).subscribe(function (data) {
+            _this.result = data;
+        });
     };
     PatientProfileComponent = __decorate([
         core_1.Component({
@@ -20,7 +28,7 @@ var PatientProfileComponent = (function () {
             templateUrl: './patient-profile.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [patient_service_1.PatientService])
     ], PatientProfileComponent);
     return PatientProfileComponent;
 }());

@@ -39,6 +39,7 @@ import {EditComponent} from "./admin/edit/edit.component";
 import {DeletePatientComponent} from "./patient/delete-patient/delete-patient.component";
 import {PatientService} from "./patient/patient.service";
 import {BookAppointmentComponent} from "./patient/book-appointment/book-appointment.component";
+import {DoctorloginService} from "./doctor-login/doctor-login.service";
 
 @NgModule({
     imports:      [
@@ -79,7 +80,8 @@ import {BookAppointmentComponent} from "./patient/book-appointment/book-appointm
         PatientRegisterService,
         MemoryService,
         PatientloginService,
-        PatientService
+        PatientService,
+        DoctorloginService
     ],
     bootstrap:    [ AppComponent ]
 })

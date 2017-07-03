@@ -54,4 +54,30 @@ export class PatientService {
                 (res:Response)=>res.json()
             )
     }
+
+    view(pat_id){
+        let params:URLSearchParams=new URLSearchParams();
+        params.set("pat_id",pat_id);
+        console.log("params pat_id"+pat_id);
+        let body=params;
+        return this.http.post('http://localhost:9090/appointment-view-patient', body)
+            .map(
+                (res:Response)=>res.json()
+            )
+    }
+
+    profileChange(pwd){
+        let params:URLSearchParams=new URLSearchParams();
+        params.set("pat_id", this.memory.current_patient);
+        params.set("pwd",pwd);
+        let body=params;
+        return this.http.post('http://localhost:9090/patient-update',body)
+            .map(
+                (res:Response)=>
+                {
+                    return res.text()
+                }
+            )
+
+    }
 }

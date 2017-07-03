@@ -12,7 +12,7 @@
       </div>
 
       <div class="content">
-        <h4 class="title">Admin Change Password</h4>
+        <h4 class="title">Patient Change Password</h4>
         <p class="category"></p>
       </div>
       <div class="card-content">
@@ -38,6 +38,10 @@
       </div>
     </div>
   </div>
+</div>
+
+<div *ngIf="result=='1'" class="alert alert-success alert-dismissable col-md-offset-3 col-md-4">
+  <strong>Success!</strong> <a href="home.component.html">Please login with new password</a>
 </div>
 
 

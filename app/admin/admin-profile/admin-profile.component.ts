@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from "../admin.service";
 import {MemoryService} from "../../memory.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-profile',
@@ -9,7 +10,7 @@ import {MemoryService} from "../../memory.service";
 })
 export class AdminProfileComponent implements OnInit {
   result:string;
-  constructor(private adminservice:AdminService, memory:MemoryService) {
+  constructor(private adminservice:AdminService, memory:MemoryService, private route: Router) {
   }
 
   ngOnInit() {

@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var admin_service_1 = require("../admin.service");
 var memory_service_1 = require("../../memory.service");
+var router_1 = require("@angular/router");
 var AdminProfileComponent = (function () {
-    function AdminProfileComponent(adminservice, memory) {
+    function AdminProfileComponent(adminservice, memory, route) {
         this.adminservice = adminservice;
+        this.route = route;
     }
     AdminProfileComponent.prototype.ngOnInit = function () {
     };
@@ -29,7 +31,7 @@ var AdminProfileComponent = (function () {
             templateUrl: './admin-profile.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [admin_service_1.AdminService, memory_service_1.MemoryService])
+        __metadata('design:paramtypes', [admin_service_1.AdminService, memory_service_1.MemoryService, router_1.Router])
     ], AdminProfileComponent);
     return AdminProfileComponent;
 }());
