@@ -63,59 +63,41 @@
   </div>
 </div>
 
+<div *ngIf="exist=='1'" class="alert alert-danger alert-dismissable col-md-offset-3 col-md-4">
+  <a href="new-appointment.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Oops!</strong> There is no available doctor
+</div>
+
 <div class="row">
   <div class="col-md-offset-2 col-md-8">
     <div class="card">
       <div class="card-header" data-background-color="blue">
-        <h4 class="title">Simple Table</h4>
-        <p class="category">Here is a subtitle for this table</p>
+        <h4 class="title">Avialiable</h4>
+        <p class="category">Doctor avialiable and time slot</p>
       </div>
       <div class="card-content table-responsive">
-        <table class="table">
-          <thead class="text-danger">
+        <table class="table table-hover">
+          <thead class="text-warning">
           <tr>
-            <th>Name</th>
-            <th>Country</th>
-            <th>City</th>
-            <th>Salary</th>
+            <th>Doctor Name</th>
+            <th>Begin Time</th>
+            <th>End Time</th>
+            <th>Option</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let slot of result">
             <td>{{slot.doc_name}}</td>
-            <td>{{slot.begin_time}}</td>
-            <td>{{slot.end_time}}</td>
-            <td class="text-danger">$36,738</td>
-          </tr>
-          <tr>
-            <td>Minerva Hooper</td>
-            <td>Curaçao</td>
-            <td>Sinaai-Waas</td>
-            <td class="text-danger">$23,789</td>
-          </tr>
-          <tr>
-            <td>Sage Rodriguez</td>
-            <td>Netherlands</td>
-            <td>Baileux</td>
-            <td class="text-danger">$56,142</td>
-          </tr>
-          <tr>
-            <td>Philip Chaney</td>
-            <td>Korea, South</td>
-            <td>Overland Park</td>
-            <td class="text-danger">$38,735</td>
-          </tr>
-          <tr>
-            <td>Doris Greene</td>
-            <td>Malawi</td>
-            <td>Feldkirchen in Kärnten</td>
-            <td class="text-danger">$63,542</td>
-          </tr>
-          <tr>
-            <td>Mason Porter</td>
-            <td>Chile</td>
-            <td>Gloucester</td>
-            <td class="text-danger">$78,615</td>
+            <td>{{slot.begin_time}}:00</td>
+            <td>{{slot.end_time}}:00</td>
+              <input type="hidden" value={{slot.doc_id}} #doc_id>
+            <input type="hidden" value={{slot.doc_name}} #doc_name>
+            <input type="hidden" value={{slot.end_time}} #end>
+            <input type="hidden" value={{slot.begin_time}} #begin>
+              <input type="hidden" value={{slot.day_id}} #day_id>
+            <input type="hidden" value={{dt}} #dt>
+            <input type="hidden" value={{pat_id}} #pat_id>
+            <td class="text-danger"><a (click)="bookselect(doc_id.value, day_id.value, doc_name.value, begin.value, end.value)">select</a></td>
           </tr>
           </tbody>
         </table>

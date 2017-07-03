@@ -11,21 +11,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var patient_service_1 = require("../patient.service");
 var memory_service_1 = require("../../memory.service");
+var router_1 = require("@angular/router");
 var NewAppointmentComponent = (function () {
-    function NewAppointmentComponent(patientservice, memory) {
+    function NewAppointmentComponent(patientservice, memory, route) {
         this.patientservice = patientservice;
         this.memory = memory;
+        this.route = route;
     }
     NewAppointmentComponent.prototype.ngOnInit = function () {
     };
     NewAppointmentComponent.prototype.searchDoctor = function (dt, spec) {
         var _this = this;
-        this.id = this.memory.current_patient;
-        console.log("id is" + this.id);
-        this.patientservice.searchDoctor(dt, spec, this.id).subscribe(function (data) {
+        this.patientservice.book_pat_id = this.memory.current_patient;
+        this.patientservice.searchDoctor(dt, spec, this.patientservice.book_pat_id).subscribe(function (data) {
             _this.result = data;
+            _this.patientservice.book_dt = dt;
+            _this.patientservice.book_spec = spec;
+            if (_this.result == null) {
+                _this.exist = "1";
+            }
+            else {
+                _this.exist = "0";
+            }
             console.log("result" + _this.result);
         });
+    };
+    NewAppointmentComponent.prototype.bookselect = function (doc_id, day_id, doc_name, begin, end) {
+        this.patientservice.book_doc_id = doc_id;
+        this.patientservice.book_day_id = day_id;
+        this.patientservice.book_doc_name = doc_name;
+        this.patientservice.book_begin = begin;
+        this.patientservice.book_end = end;
+        this.route.navigate(['./patient/book-appointment']);
     };
     NewAppointmentComponent = __decorate([
         core_1.Component({
@@ -33,7 +50,7 @@ var NewAppointmentComponent = (function () {
             templateUrl: './new-appointment.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [patient_service_1.PatientService, memory_service_1.MemoryService])
+        __metadata('design:paramtypes', [patient_service_1.PatientService, memory_service_1.MemoryService, router_1.Router])
     ], NewAppointmentComponent);
     return NewAppointmentComponent;
 }());

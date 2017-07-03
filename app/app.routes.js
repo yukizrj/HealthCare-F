@@ -33,6 +33,7 @@ var patient_register_component_1 = require("./patient-register/patient-register.
 var home_component_1 = require("./home/home.component");
 var edit_component_1 = require("./admin/edit/edit.component");
 var delete_patient_component_1 = require("./patient/delete-patient/delete-patient.component");
+var book_appointment_component_1 = require("./patient/book-appointment/book-appointment.component");
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'doctor-login', component: doctor_login_component_1.DoctorLoginComponent },
@@ -45,6 +46,7 @@ var appRoutes = [
             { path: 'new-appointment', component: new_appointment_component_1.NewAppointmentComponent },
             { path: 'view-appointment', component: view_appointment_component_1.ViewAppointmentComponent },
             { path: 'delete-patient', component: delete_patient_component_1.DeletePatientComponent },
+            { path: 'book-appointment', component: book_appointment_component_1.BookAppointmentComponent },
         ]
     },
     { path: 'doctors', component: doctors_component_1.DoctorsComponent,

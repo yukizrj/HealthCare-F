@@ -38,6 +38,7 @@ import {PatientloginService} from "./patient-login/patient-login.service";
 import {EditComponent} from "./admin/edit/edit.component";
 import {DeletePatientComponent} from "./patient/delete-patient/delete-patient.component";
 import {PatientService} from "./patient/patient.service";
+import {BookAppointmentComponent} from "./patient/book-appointment/book-appointment.component";
 
 @NgModule({
     imports:      [
@@ -69,7 +70,8 @@ import {PatientService} from "./patient/patient.service";
         AdminLoginComponent,
         PatientRegisterComponent,
         EditComponent,
-        DeletePatientComponent
+        DeletePatientComponent,
+        BookAppointmentComponent
     ],
     providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
         AdminloginService,

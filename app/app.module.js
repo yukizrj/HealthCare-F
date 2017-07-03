@@ -45,6 +45,7 @@ var patient_login_service_1 = require("./patient-login/patient-login.service");
 var edit_component_1 = require("./admin/edit/edit.component");
 var delete_patient_component_1 = require("./patient/delete-patient/delete-patient.component");
 var patient_service_1 = require("./patient/patient.service");
+var book_appointment_component_1 = require("./patient/book-appointment/book-appointment.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -79,7 +80,8 @@ var AppModule = (function () {
                 admin_login_component_1.AdminLoginComponent,
                 patient_register_component_1.PatientRegisterComponent,
                 edit_component_1.EditComponent,
-                delete_patient_component_1.DeletePatientComponent
+                delete_patient_component_1.DeletePatientComponent,
+                book_appointment_component_1.BookAppointmentComponent
             ],
             providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
                 adminlogin_service_1.AdminloginService,
