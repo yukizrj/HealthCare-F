@@ -3,14 +3,6 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
-      <div *ngIf="result=='1'" class="alert alert-success alert-dismissable">
-        <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Success!</strong> <a routerLink="/patient-login"> You have registered, please login</a>
-      </div>
-      <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
-        <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Failed!</strong>Your email had already registered
-      </div>
       <div class="card">
         <div class="card-header" data-background-color="red">
           <h4 class="title">Register</h4>
@@ -36,7 +28,7 @@
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Password</label>
-                  <input type="text"  class="form-control" #pwd required="required">
+                  <input type="password"  class="form-control" #pwd required="required">
                 </div>
               </div>
             </div>
@@ -58,12 +50,20 @@
                 </div>
               </div>
             </div>
-
-            <button type="submit" [disabled]="f.form.valid" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,email.value,gender.value,name.value,pwd.value)" >Register</button>
+            <button type="reset" class="btn btn-danger pull-left" value="Reset">Reset</button>
+            <button type="submit" [disabled]="!dob.value || !email.value || !gender.value || !name.value || !pwd.value" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,email.value,gender.value,name.value,pwd.value)" >Register</button>
             <div class="clearfix"></div>
 
           </form>
         </div>
+      </div>
+      <div *ngIf="result=='1'" class="alert alert-success alert-dismissable">
+        <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> <a routerLink="/patient-login"> You have registered, please click to login</a>
+      </div>
+      <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
+        <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Failed!</strong>Your email had already registered
       </div>
     </div>
   </div>

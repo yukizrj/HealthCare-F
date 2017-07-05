@@ -7,7 +7,7 @@ import {DeletedoctorComponent} from "./admin/deletedoctor/deletedoctor.component
 import {AdminProfileComponent} from "./admin/admin-profile/admin-profile.component";
 import {ScheduledoctorComponent} from "./admin/scheduledoctor/scheduledoctor.component";
 import {LeaveComponent} from "./doctors/leave/leave.component";
-import {DoctorViewScheduleComponent} from "./doctors/doctor-view-schedule/doctor-view-schedule.component";
+import {     DoctorViewProfileComponent} from "./doctors/doctor-view-profile/doctor-view-profile.component";
 import {DoctorViewAppointmentComponent} from "./doctors/doctor-view-appointment/doctor-view-appointment.component";
 import {DoctorProfileComponent} from "./doctors/doctor-profile/doctor-profile.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
@@ -46,7 +46,7 @@ const appRoutes:Routes=[
 
             { path: 'doctor-profile',component:DoctorProfileComponent},
             { path: 'doctor-view-appointment', component:DoctorViewAppointmentComponent},
-            { path: 'doctor-view-schedule', component:DoctorViewScheduleComponent },
+            { path: 'doctor-view-profile', component:DoctorViewProfileComponent },
             { path: 'leave',component:LeaveComponent }
         ]
     },

@@ -16,7 +16,7 @@
           <p class="category"></p>
         </div>
         <div class="card-content">
-          <form #f="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
+          <form #fap="ngForm" novalidate (ngSubmit)="save(f.value, f.valid)">
             <div class="row">
 
               <div class="col-md-12">
@@ -24,7 +24,7 @@
                   <label>Password</label>
                   <input type="password" class="form-control" name="password" [ngModel]="user.password"
                          required validateEqual="confirmPassword" reverse="true" #password="ngModel">
-                  <small [hidden]="password.valid || (password.pristine && !f.submitted)" class="text-danger">
+                  <small [hidden]="password.valid || (password.pristine && !fap.submitted)" class="text-danger">
                     Password is required
                   </small>
                   <!--<pre *ngIf="password.errors" class="margin-20">{{ password.errors | json }}</pre>-->
@@ -33,7 +33,7 @@
                   <label>Retype password</label>
                   <input #pwd type="password" class="form-control" name="confirmPassword" [ngModel]="user.confirmPassword"
                          required validateEqual="password" reverse="false" #confirmPassword="ngModel">
-                  <span [hidden]="confirmPassword.valid || (confirmPassword.pristine && !f.submitted)" class="text-danger">
+                  <span [hidden]="confirmPassword.valid || (confirmPassword.pristine && !fap.submitted)" class="text-danger">
                   Password mismatch
                 </span>
                   <!--<pre *ngIf="confirmPassword.errors" class="margin-20">{{ confirmPassword.errors | json }}</pre>-->
@@ -50,8 +50,8 @@
                 </div>-->
               </div>
             </div>
-
-            <button type="submit" [disabled]="!f.form.valid" class="btn btn-info btn-round" (click)="profileChange(pwd.value)">Submit Change</button>
+            <button type="reset" class="btn btn-danger pull-left" value="Reset">Reset</button>
+            <button type="submit" [disabled]="!fap.form.valid" class="btn btn-info btn-round" (click)="profileChange(pwd.value)">Submit Change</button>
           </form>
         </div>
       </div>

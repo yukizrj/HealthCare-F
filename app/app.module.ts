@@ -13,7 +13,7 @@ import {DeletedoctorComponent} from "./admin/deletedoctor/deletedoctor.component
 import {AdminProfileComponent} from "./admin/admin-profile/admin-profile.component";
 import {ScheduledoctorComponent} from "./admin/scheduledoctor/scheduledoctor.component";
 import {LeaveComponent} from "./doctors/leave/leave.component";
-import {DoctorViewScheduleComponent} from "./doctors/doctor-view-schedule/doctor-view-schedule.component";
+import {DoctorViewProfileComponent} from "./doctors/doctor-view-profile/doctor-view-profile.component";
 import {DoctorViewAppointmentComponent} from "./doctors/doctor-view-appointment/doctor-view-appointment.component";
 import {DoctorProfileComponent} from "./doctors/doctor-profile/doctor-profile.component";
 import {ApproveleaveComponent} from "./admin/approveleave/approveleave.component";
@@ -61,7 +61,7 @@ import {EqualValidator} from "./equal-validator.directice";
         DoctorsComponent,
         AdminComponent,
         PageNotFoundComponent,
-        DoctorViewScheduleComponent,
+        DoctorViewProfileComponent,
         DoctorViewAppointmentComponent,
         DoctorProfileComponent,
         ApproveleaveComponent,

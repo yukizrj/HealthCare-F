@@ -20,7 +20,7 @@ var deletedoctor_component_1 = require("./admin/deletedoctor/deletedoctor.compon
 var admin_profile_component_1 = require("./admin/admin-profile/admin-profile.component");
 var scheduledoctor_component_1 = require("./admin/scheduledoctor/scheduledoctor.component");
 var leave_component_1 = require("./doctors/leave/leave.component");
-var doctor_view_schedule_component_1 = require("./doctors/doctor-view-schedule/doctor-view-schedule.component");
+var doctor_view_profile_component_1 = require("./doctors/doctor-view-profile/doctor-view-profile.component");
 var doctor_view_appointment_component_1 = require("./doctors/doctor-view-appointment/doctor-view-appointment.component");
 var doctor_profile_component_1 = require("./doctors/doctor-profile/doctor-profile.component");
 var approveleave_component_1 = require("./admin/approveleave/approveleave.component");
@@ -71,7 +71,7 @@ var AppModule = (function () {
                 doctors_component_1.DoctorsComponent,
                 admin_component_1.AdminComponent,
                 page_not_found_component_1.PageNotFoundComponent,
-                doctor_view_schedule_component_1.DoctorViewScheduleComponent,
+                doctor_view_profile_component_1.DoctorViewProfileComponent,
                 doctor_view_appointment_component_1.DoctorViewAppointmentComponent,
                 doctor_profile_component_1.DoctorProfileComponent,
                 approveleave_component_1.ApproveleaveComponent,

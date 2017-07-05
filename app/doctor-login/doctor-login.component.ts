@@ -18,9 +18,12 @@ export class DoctorLoginComponent implements OnInit {
   loginSubmit(license:string,pwd:string){
     this.doctorlogin.login(license, pwd).subscribe((data)=>{
       this.result=data;
+      console.log("Result"+this.result);
       if(this.result!=="0"){
         this.memory.current_doctor=this.result;
-        console.log("patient in memory"+this.memory.current_doctor);
+        this.memory.current_doctor2=this.result;
+        console.log("doctor in memory1"+this.memory.current_doctor);
+        console.log("doctor in memory2"+this.memory.current_doctor2);
         this.route.navigate(["/doctors"])
       }else{
 

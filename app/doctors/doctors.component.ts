@@ -16,11 +16,13 @@ export class DoctorsComponent implements OnInit {
     $.getScript('../../assets/js/material-dashboard.js');
     $.getScript('../../assets/js/initMenu.js');
     this.menuItems = Route.filter(menuItem => menuItem);
+    console.log(this.menuItems);
   }
   location: Location;
   constructor(location:Location) {
     this.location = location;
   }
+
   public isMaps(path){
     var titlee = this.location.prepareExternalUrl(this.location.path());
     titlee = titlee.slice( 1 );

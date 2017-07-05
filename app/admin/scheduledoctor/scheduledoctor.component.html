@@ -42,14 +42,14 @@
               <td>
                 From:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #mbegin>
+                  <input type="number" class="form-control" min="8" max="12"  #mbegin>
                   <span class="input-group-addon">：00</span>
                 </div>
               </td>
               <td>
                 To:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #mend>
+                  <input type="number" class="form-control" min="12" max="18"  #mend>
                   <span class="input-group-addon">：00</span>
                 </div>
               </td>
@@ -61,14 +61,14 @@
               <td>
                 From:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #tubegin>
+                  <input type="number" class="form-control" min="8" max="12"  #tubegin>
                   <span class="input-group-addon">：00</span>
                 </div>
               </td>
               <td>
                 To:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #tuend>
+                  <input type="number" class="form-control" min="12" max="18"  #tuend>
                   <span class="input-group-addon">：00</span>
                 </div>
               </td>
@@ -80,14 +80,14 @@
               <td>
                 From:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #wbegin>
+                  <input type="number" class="form-control" min="8" max="12"  #wbegin>
                   <span class="input-group-addon">：00</span>
                 </div>
               </td>
               <td>
                 To:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #wend>
+                  <input type="number" class="form-control" min="12" max="18"  #wend>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
@@ -99,14 +99,14 @@
               <td>
                 From:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #tbegin>
+                  <input type="number" class="form-control" min="8" max="12"  #tbegin>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
               <td>
                 To:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #tend>
+                  <input type="number" class="form-control" min="12" max="18"  #tend>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
@@ -118,14 +118,14 @@
               <td>
                 From:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #fbegin>
+                  <input type="number" class="form-control" min="8" max="12"  #fbegin>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
               <td>
                 To:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #fend>
+                  <input type="number" class="form-control" min="12" max="18"  #fend>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
@@ -138,14 +138,14 @@
               <td>
                 From:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #sbegin>
+                  <input type="number" class="form-control" min="8" max="12"  #sbegin>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
               <td>
                 To:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #send>
+                  <input type="number" class="form-control" min="12" max="18"  #send>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
@@ -158,14 +158,14 @@
               <td>
                 From:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #subegin>
+                  <input type="number" class="form-control" min="8" max="12"  #subegin>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
               <td>
                 To:
                 <div class="input-group">
-                  <input type="number" class="form-control" min="8" max="18"  #suend>
+                  <input type="number" class="form-control" min="12" max="18"  #suend>
                   <span class="input-group-addon">:00</span>
                 </div>
               </td>
@@ -173,7 +173,8 @@
             </tr>
             </tbody>
           </table>
-            <button type="submit" class="btn btn-danger btn-round" (click)="scheduledata(license.value,mday.checked,mbegin.value,mend.value,tuday.checked,tubegin.value, tuend.value,wday.checked, wbegin.value,wend.value,tday.checked,tbegin.value,tend.value,fday.checked, fbegin.value, fend.value,sday.checked,sbegin.value,send.value,suday.checked,subegin.value,suend.value)">Save</button>
+            <button type="reset" class="btn btn-danger pull-left" value="Reset">Reset</button>
+            <button type="submit" [disabled]="!license.value" class="btn btn-danger btn-round" (click)="scheduledata(license.value,mday.checked,mbegin.value,mend.value,tuday.checked,tubegin.value, tuend.value,wday.checked, wbegin.value,wend.value,tday.checked,tbegin.value,tend.value,fday.checked, fbegin.value, fend.value,sday.checked,sbegin.value,send.value,suday.checked,subegin.value,suend.value)">Save</button>
           </form>
         </div>
       </div>

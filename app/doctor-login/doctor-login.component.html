@@ -3,6 +3,10 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
+        <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
+          <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Failed!</strong> Please enter right license number and password!
+        </div>
         <div class="card card-profile">
           <div class="card-avatar">
             <a href="#pablo">
@@ -28,7 +32,7 @@
                 <div class="col-md-12">
                   <div class="form-group form-black label-floating is-empty">
                     <label class="control-label">Password</label>
-                    <input type="text" class="form-control" #pwd>
+                    <input type="password" class="form-control" #pwd>
                   </div>
                 </div>
               </div>

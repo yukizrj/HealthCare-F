@@ -24,9 +24,12 @@ var DoctorLoginComponent = (function () {
         var _this = this;
         this.doctorlogin.login(license, pwd).subscribe(function (data) {
             _this.result = data;
+            console.log("Result" + _this.result);
             if (_this.result !== "0") {
                 _this.memory.current_doctor = _this.result;
-                console.log("patient in memory" + _this.memory.current_doctor);
+                _this.memory.current_doctor2 = _this.result;
+                console.log("doctor in memory1" + _this.memory.current_doctor);
+                console.log("doctor in memory2" + _this.memory.current_doctor2);
                 _this.route.navigate(["/doctors"]);
             }
             else {

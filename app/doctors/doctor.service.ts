@@ -36,5 +36,21 @@ export class DoctorService {
             )
 
     }
+
+    getDetail(doc_id2){
+        /*console.log("doctor detail id"+doc_id2)*/
+        let params:URLSearchParams=new URLSearchParams();
+        params.set("doc_id2",doc_id2);
+        let body=params;
+        return this.http.post('http://localhost:9090/doctor-search',body)
+            .map(
+                    (res:Response)=>
+                    {console.log("Doctor detail response "+res.text());
+                        return res.json()
+                    }
+
+            )
+    }
+
 }
 

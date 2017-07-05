@@ -20,6 +20,7 @@ var DoctorsComponent = (function () {
         $.getScript('../../assets/js/material-dashboard.js');
         $.getScript('../../assets/js/initMenu.js');
         this.menuItems = doctors_routes_config_1.Route.filter(function (menuItem) { return menuItem; });
+        console.log(this.menuItems);
     };
     DoctorsComponent.prototype.isMaps = function (path) {
         var titlee = this.location.prepareExternalUrl(this.location.path());

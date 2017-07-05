@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var MemoryService = (function () {
+    //licenseno
     /* constructor(current_admin, current_patient, current_doctor) {
          this.current_admin=current_admin;
          this.current_doctor=current_doctor;
