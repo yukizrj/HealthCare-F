@@ -41,6 +41,7 @@ import {PatientService} from "./patient/patient.service";
 import {BookAppointmentComponent} from "./patient/book-appointment/book-appointment.component";
 import {DoctorloginService} from "./doctor-login/doctor-login.service";
 import {DoctorService} from "./doctors/doctor.service";
+import {EqualValidator} from "./equal-validator.directice";
 
 @NgModule({
     imports:      [
@@ -73,7 +74,8 @@ import {DoctorService} from "./doctors/doctor.service";
         PatientRegisterComponent,
         EditComponent,
         DeletePatientComponent,
-        BookAppointmentComponent
+        BookAppointmentComponent,
+        EqualValidator
     ],
     providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
         AdminloginService,

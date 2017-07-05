@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminService} from "../admin.service";
+import {User} from "../../user.interface";
 declare var $:any;
 @Component({
   selector: 'app-adddoctor',
@@ -7,12 +8,18 @@ declare var $:any;
   moduleId: module.id,
 })
 export class AdddoctorComponent implements OnInit {
-
+public user:User
   result:string;
   constructor(private adminservice: AdminService) { }
 
   ngOnInit() {
     $.getScript('../../assets/js/demo.js');
+    this.user = {
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
   }
 
   addDoctor(email:string, license:string, name:string, pwd:string, spe_id:string){

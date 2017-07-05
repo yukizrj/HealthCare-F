@@ -18,6 +18,12 @@ var AdminProfileComponent = (function () {
         this.route = route;
     }
     AdminProfileComponent.prototype.ngOnInit = function () {
+        this.user = {
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        };
     };
     AdminProfileComponent.prototype.profileChange = function (pwd) {
         var _this = this;

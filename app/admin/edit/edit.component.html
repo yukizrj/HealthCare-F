@@ -18,7 +18,7 @@
             <p class="category">Enter doctor information</p>
           </div>
           <div class="card-content">
-            <form>
+            <form #f="ngForm">
               <input type="hidden" #eid value={{doc_id}}> <!--value={{editdata.charAt(0)}}-->
               <input type="hidden" #elicense value={{doc_license}}>
               <input type="hidden" #epwd value={{doc_pwd}}>
@@ -35,7 +35,7 @@
                 <div class="col-md-12">
                   <div class="form-group form-black is-empty">
                     <label class="control-label">Email address</label>
-                    <input type="email" class="form-control" #eemail value={{doc_email}}> <!--value={{editdata.charAt(1)}}-->
+                    <input type="email" class="form-control" #eemail value={{doc_email}} required> <!--value={{editdata.charAt(1)}}-->
                   </div>
                 </div>
               </div>
@@ -58,7 +58,7 @@
                 </div>
               </div>
               <button  class="btn btn-info pull-left" (click)="back()" >Cancel</button>
-              <button type="submit" class="btn btn-danger pull-right" (click)="editDoctor(elicense.value,eemail.value, ename.value, espe_id.value, eid.value, epwd.value)" >Change</button>
+              <button type="submit" [disabled]="f.form.valid" class="btn btn-danger pull-right" (click)="editDoctor(elicense.value,eemail.value, ename.value, espe_id.value, eid.value, epwd.value)" >Change</button>
               <div class="clearfix"></div>
 
             </form>

@@ -15,6 +15,12 @@ var PatientProfileComponent = (function () {
         this.patientservice = patientservice;
     }
     PatientProfileComponent.prototype.ngOnInit = function () {
+        this.user = {
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        };
     };
     PatientProfileComponent.prototype.profileChange = function (pwd) {
         var _this = this;

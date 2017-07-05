@@ -2,26 +2,24 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
-      <div *ngIf="result=='1'" class="alert alert-success alert-dismissable">
-        <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Success!</strong> Doctor added
-      </div>
-      <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
-        <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <strong>Failed!</strong> Doctor information wrong!
-      </div>
       <div class="card">
         <div class="card-header" data-background-color="red">
           <h4 class="title">Add Doctor</h4>
           <p class="category">Enter doctor information</p>
         </div>
         <div class="card-content">
-          <form>
+          <form #f="ngForm">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Name</label>
-                  <input type="text" class="form-control" #name required="required">
+                  <input type="text" class="form-control" #name required="required" >
+                  <div *ngIf="name.errors|| (name.dirty || name.touched)"
+                       class="alert alert-danger">
+                <div [hidden]="!name.dirty">
+                      Name must contained only character
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -37,7 +35,7 @@
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Email address</label>
-                  <input type="email" class="form-control" #email>
+                  <input type="email" class="form-control" #emai requiredl>
                 </div>
             </div>
               </div>
@@ -73,10 +71,18 @@
                 </div>
               </div>
 
-            <button type="submit" class="btn btn-danger pull-right" (click)="addDoctor(email.value, license.value, name.value, pwd.value, spe_id.value)" >Add</button>
+            <button type="submit" [disabled]="f.form.valid" class="btn btn-danger pull-right" (click)="addDoctor(email.value, license.value, name.value, pwd.value, spe_id.value)" >Add</button>
             <div class="clearfix"></div>
 
           </form>
+          <div *ngIf="result=='1'" class="alert alert-success alert-dismissable">
+            <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Success!</strong> Doctor added
+          </div>
+          <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
+            <a href="adddoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Failed!</strong> Doctor already exist
+          </div>
         </div>
       </div>
     </div>

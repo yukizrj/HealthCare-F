@@ -16,6 +16,12 @@ var AdddoctorComponent = (function () {
     }
     AdddoctorComponent.prototype.ngOnInit = function () {
         $.getScript('../../assets/js/demo.js');
+        this.user = {
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        };
     };
     AdddoctorComponent.prototype.addDoctor = function (email, license, name, pwd, spe_id) {
         var _this = this;

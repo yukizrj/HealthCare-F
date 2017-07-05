@@ -17,7 +17,7 @@
           <p class="category">Enter your information</p>
         </div>
         <div class="card-content">
-          <form>
+          <form #f="ngForm">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
@@ -59,7 +59,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,email.value,gender.value,name.value,pwd.value)" >Register</button>
+            <button type="submit" [disabled]="f.form.valid" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,email.value,gender.value,name.value,pwd.value)" >Register</button>
             <div class="clearfix"></div>
 
           </form>

@@ -9,10 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var doctor_service_1 = require("../doctor.service");
 var DoctorProfileComponent = (function () {
-    function DoctorProfileComponent() {
+    function DoctorProfileComponent(doctorservice) {
+        this.doctorservice = doctorservice;
     }
     DoctorProfileComponent.prototype.ngOnInit = function () {
+        this.user = {
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+        };
+    };
+    DoctorProfileComponent.prototype.profileChange = function (pwd) {
+        var _this = this;
+        this.doctorservice.profileChange(pwd).subscribe(function (data) {
+            _this.result = data;
+        });
+    };
+    DoctorProfileComponent.prototype.save = function (model, isValid) {
+        // call API to save customer
+        console.log(model, isValid);
     };
     DoctorProfileComponent = __decorate([
         core_1.Component({
@@ -20,7 +38,7 @@ var DoctorProfileComponent = (function () {
             templateUrl: './doctor-profile.component.html',
             moduleId: module.id,
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [doctor_service_1.DoctorService])
     ], DoctorProfileComponent);
     return DoctorProfileComponent;
 }());
