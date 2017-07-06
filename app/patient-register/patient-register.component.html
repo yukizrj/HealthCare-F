@@ -9,18 +9,18 @@
           <p class="category">Enter your information</p>
         </div>
         <div class="card-content">
-          <form #f="ngForm">
+          <form>
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Name</label>
-                  <input type="text" class="form-control" #name required="required">
+                  <input type="text" class="form-control" #pname required="required">
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Email address</label>
-                  <input type="email" class="form-control" #email required="required">
+                  <input type="email" class="form-control" #pemail required="required">
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Password</label>
-                  <input type="password"  class="form-control" #pwd required="required">
+                  <input type="password"  class="form-control" #ppwd required="required">
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
               </div>
             </div>
             <button type="reset" class="btn btn-danger pull-left" value="Reset">Reset</button>
-            <button type="submit" [disabled]="!dob.value || !email.value || !name.value || !pwd.value" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,email.value,gender.value,name.value,pwd.value)" >Register</button>
+            <button type="submit" [disabled]="!dob.value||!pemail.value||!pname.value||!ppwd.value" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,pemail.value,gender.value,pname.value,ppwd.value)" >Register</button>
             <div class="clearfix"></div>
 
           </form>
