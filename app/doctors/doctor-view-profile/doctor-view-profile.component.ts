@@ -1,6 +1,4 @@
-/**
- * Created by zrj on 7/5/2017.
- */
+
 import { Component, OnInit } from '@angular/core';
 import {MemoryService} from "../../memory.service";
 import {DoctorService} from "../doctor.service";
@@ -12,18 +10,18 @@ import {DoctorService} from "../doctor.service";
     moduleId: module.id,
 })
 export class DoctorViewProfileComponent implements OnInit {
-    doc_id:string;
+    doc_id2:string;
 doctor_detail:any;
     constructor(private memory:MemoryService,private doctor:DoctorService) { }
 
     ngOnInit() {
 
-       this.doc_id= this.memory.current_doctor
-        console.log(this.doc_id);
+       this.doc_id2= this.memory.current_doctor2;
+        console.log(this.doc_id2);
         }
     getDetail()
     {
-        this.doctor.getDetail(this.doc_id)
+        this.doctor.getDetail(this.doc_id2)
             .subscribe(
                 (data)=>
                 {

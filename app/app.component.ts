@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LocationStrategy, PlatformLocation, Location} from '@angular/common';
-import {HomeRoute} from "./app.routes.config";
+
 
 declare var $:any;
 
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
         $.getScript('../assets/js/sidebar-moving-tab.js');
         $.getScript('../assets/js/material-dashboard.js');
         $.getScript('../assets/js/initMenu.js');
-        this.menuItems = HomeRoute.filter(menuItem => menuItem);
+
     }
 
     public isMaps(path){

@@ -16,7 +16,6 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.result = this.memory.current_patient;
-        console.log("delete item" + this.memory.current_patient);
     };
     HomeComponent = __decorate([
         core_1.Component({

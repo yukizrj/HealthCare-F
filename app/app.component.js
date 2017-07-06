@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
-var app_routes_config_1 = require("./app.routes.config");
 var AppComponent = (function () {
     function AppComponent(location) {
         this.location = location;
@@ -19,7 +18,6 @@ var AppComponent = (function () {
         $.getScript('../assets/js/sidebar-moving-tab.js');
         $.getScript('../assets/js/material-dashboard.js');
         $.getScript('../assets/js/initMenu.js');
-        this.menuItems = app_routes_config_1.HomeRoute.filter(function (menuItem) { return menuItem; });
     };
     AppComponent.prototype.isMaps = function (path) {
         var titlee = this.location.prepareExternalUrl(this.location.path());

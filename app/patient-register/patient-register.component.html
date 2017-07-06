@@ -45,13 +45,13 @@
               <div class="col-md-12">
                 <div class="form-group form-black  is-empty">
                   <label class="control-label">Gender</label>
-                  <input type="radio" name="gender" #gender value="male" checked> Male
-                  <input type="radio" name="gender" #gender value="female"> Female
+                  <input type="radio" name="gender" #gender value="m" checked> Male
+                  <input type="radio" name="gender" #gender value="f"> Female
                 </div>
               </div>
             </div>
             <button type="reset" class="btn btn-danger pull-left" value="Reset">Reset</button>
-            <button type="submit" [disabled]="!dob.value || !email.value || !gender.value || !name.value || !pwd.value" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,email.value,gender.value,name.value,pwd.value)" >Register</button>
+            <button type="submit" [disabled]="!dob.value || !email.value || !name.value || !pwd.value" class="btn btn-danger pull-right" (click)="registerSubmit(dob.value,email.value,gender.value,name.value,pwd.value)" >Register</button>
             <div class="clearfix"></div>
 
           </form>

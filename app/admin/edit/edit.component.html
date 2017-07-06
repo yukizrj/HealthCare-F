@@ -58,7 +58,7 @@
                 </div>
               </div>
               <button  class="btn btn-info pull-left" (click)="back()" >Cancel</button>
-              <button type="submit" [disabled]="f.form.valid" class="btn btn-danger pull-right" (click)="editDoctor(elicense.value,eemail.value, ename.value, espe_id.value, eid.value, epwd.value)" >Change</button>
+              <button type="submit" [disabled]="!elicense.value || !eemail.value " class="btn btn-danger pull-right" (click)="editDoctor(elicense.value,eemail.value, ename.value, espe_id.value, eid.value, epwd.value)" >Change</button>
               <div class="clearfix"></div>
 
             </form>

@@ -1,7 +1,7 @@
 
 import {RouteInfo} from "./admin.metadata";
 export const Route: RouteInfo[] = [
-    { path: './admin-profile', title: 'Profile',  icon: 'account_box', class: '' },
+    { path: './admin-profile', title: 'Change Password',  icon: 'account_box', class: '' },
     { path: './adddoctor', title: 'Add Doctor',  icon:'queue', class: '' },
     { path: './deletedoctor', title: 'Search Doctor',  icon:'search', class: '' },
     { path: './scheduledoctor', title: 'Schedule Doctor',  icon:'date_range', class: '' },

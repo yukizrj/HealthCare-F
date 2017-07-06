@@ -71,7 +71,7 @@
                 </div>
               </div>
             <button type="reset" class="btn btn-danger pull-left" value="Reset">Reset</button>
-            <button type="submit" [disabled]="!email.value || !license.value || !name.value || !pwd.value || !spe_id.value" class="btn btn-danger pull-right" (click)="addDoctor(email.value, license.value, name.value, pwd.value, spe_id.value)" >Add</button>
+            <button type="submit" [disabled]="!email.value || !license.value || !name.value " class="btn btn-danger pull-right" (click)="addDoctor(email.value, license.value, name.value, pwd.value, spe_id.value)" >Add</button>
             <div class="clearfix"></div>
 
           </form>

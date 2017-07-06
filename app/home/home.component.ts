@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.result=this.memory.current_patient;
-    console.log("delete item"+this.memory.current_patient);
+
   }
 
 }
