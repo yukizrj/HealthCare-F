@@ -42,6 +42,8 @@ import {BookAppointmentComponent} from "./patient/book-appointment/book-appointm
 import {DoctorloginService} from "./doctor-login/doctor-login.service";
 import {DoctorService} from "./doctors/doctor.service";
 import {EqualValidator} from "./equal-validator.directice";
+import {WeekdayPipe} from "./weekday.pipe";
+import {ViewScheduleComponent} from "./doctors/view-schedule/view-schedule.component";
 
 @NgModule({
     imports:      [
@@ -75,7 +77,9 @@ import {EqualValidator} from "./equal-validator.directice";
         EditComponent,
         DeletePatientComponent,
         BookAppointmentComponent,
-        EqualValidator
+        ViewScheduleComponent,
+        EqualValidator,
+        WeekdayPipe
     ],
     providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
         AdminloginService,

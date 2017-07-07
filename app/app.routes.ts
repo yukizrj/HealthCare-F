@@ -25,6 +25,7 @@ import {HomeComponent} from "./home/home.component";
 import {EditComponent} from "./admin/edit/edit.component";
 import {DeletePatientComponent} from "./patient/delete-patient/delete-patient.component";
 import {BookAppointmentComponent} from "./patient/book-appointment/book-appointment.component";
+import {ViewScheduleComponent} from "./doctors/view-schedule/view-schedule.component";
 const appRoutes:Routes=[
     {path:'',component:HomeComponent},
     {path:'doctor-login',component:DoctorLoginComponent},
@@ -47,7 +48,9 @@ const appRoutes:Routes=[
             { path: 'doctor-profile',component:DoctorProfileComponent},
             { path: 'doctor-view-appointment', component:DoctorViewAppointmentComponent},
             { path: 'doctor-view-profile', component:DoctorViewProfileComponent },
-            { path: 'leave',component:LeaveComponent }
+            { path: 'leave',component:LeaveComponent },
+            { path: 'view-schedule', component:ViewScheduleComponent },
+
         ]
     },
     {path:'admin',component:AdminComponent,

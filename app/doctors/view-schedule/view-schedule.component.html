@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-offset-2 col-md-8">
+        <div *ngIf="result=='0'" class="alert alert-danger alert-dismissable">
+            <strong>Oops!</strong> You dont have any reservation yet
+        </div>
+        <div class="card">
+            <div class="card-header" data-background-color="red">
+                <h4 class="title">View</h4>
+                <p class="category">View your schedule</p>
+            </div>
+            <div class="card-content table-responsive">
+                <form>
+                    <table class="table">
+                        <thead class="text-danger">
+                        <tr>
+                            <th>WeekDay</th>
+                            <th>Slot Begin</th>
+                            <th>Slot End</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let v of result">
+                            <td>{{v.weekday | weekday}}</td>
+                            <td>{{v.begin}}:00</td>
+                            <td>{{v.end}}:00</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <input type="hidden" value={{doc_id}} #doc_id>
+                    <input type="submit" class="btn btn-info btn-round" value="Yes, view" (click)="viewSchedule(doc_id.value)">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

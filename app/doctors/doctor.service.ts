@@ -22,6 +22,17 @@ export class DoctorService {
             )
     }
 
+    viewSchedule(doc_id){
+        let params:URLSearchParams=new URLSearchParams();
+        params.set("doc_id",doc_id);
+        console.log("params pat_id"+doc_id);
+        let body=params;
+        return this.http.post('http://localhost:9090/doctor-view-schedule', body)
+            .map(
+                (res:Response)=>res.json()
+            )
+    }
+
     profileChange(pwd){
         let params:URLSearchParams=new URLSearchParams();
         params.set("doc_id", this.memory.current_doctor);

@@ -34,6 +34,7 @@ var home_component_1 = require("./home/home.component");
 var edit_component_1 = require("./admin/edit/edit.component");
 var delete_patient_component_1 = require("./patient/delete-patient/delete-patient.component");
 var book_appointment_component_1 = require("./patient/book-appointment/book-appointment.component");
+var view_schedule_component_1 = require("./doctors/view-schedule/view-schedule.component");
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'doctor-login', component: doctor_login_component_1.DoctorLoginComponent },
@@ -54,7 +55,8 @@ var appRoutes = [
             { path: 'doctor-profile', component: doctor_profile_component_1.DoctorProfileComponent },
             { path: 'doctor-view-appointment', component: doctor_view_appointment_component_1.DoctorViewAppointmentComponent },
             { path: 'doctor-view-profile', component: doctor_view_profile_component_1.DoctorViewProfileComponent },
-            { path: 'leave', component: leave_component_1.LeaveComponent }
+            { path: 'leave', component: leave_component_1.LeaveComponent },
+            { path: 'view-schedule', component: view_schedule_component_1.ViewScheduleComponent },
         ]
     },
     { path: 'admin', component: admin_component_1.AdminComponent,

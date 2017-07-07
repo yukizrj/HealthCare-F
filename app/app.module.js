@@ -49,6 +49,8 @@ var book_appointment_component_1 = require("./patient/book-appointment/book-appo
 var doctor_login_service_1 = require("./doctor-login/doctor-login.service");
 var doctor_service_1 = require("./doctors/doctor.service");
 var equal_validator_directice_1 = require("./equal-validator.directice");
+var weekday_pipe_1 = require("./weekday.pipe");
+var view_schedule_component_1 = require("./doctors/view-schedule/view-schedule.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -85,7 +87,9 @@ var AppModule = (function () {
                 edit_component_1.EditComponent,
                 delete_patient_component_1.DeletePatientComponent,
                 book_appointment_component_1.BookAppointmentComponent,
-                equal_validator_directice_1.EqualValidator
+                view_schedule_component_1.ViewScheduleComponent,
+                equal_validator_directice_1.EqualValidator,
+                weekday_pipe_1.WeekdayPipe
             ],
             providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy },
                 adminlogin_service_1.AdminloginService,
