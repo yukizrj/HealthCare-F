@@ -12,6 +12,14 @@
           <a href="deletedoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <strong>Failed!</strong> Doctor information wrong!
         </div>
+        <div *ngIf="deleteresult=='1'" class="alert alert-success alert-dismissable">
+          <a href="deletedoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> Doctor deleted
+        </div>
+        <div *ngIf="deleteresult=='0'" class="alert alert-success alert-dismissable">
+          <a href="deletedoctor.component.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Failed!</strong> Doctor already deleted
+        </div>
         <div class="card">
           <div class="card-header" data-background-color="red">
             <h4 class="title">Edit Doctor</h4>
@@ -58,6 +66,7 @@
                 </div>
               </div>
               <button  class="btn btn-info pull-left" (click)="back()" >Cancel</button>
+              <button class="btn btn-warning" (click)="delete(eid.value)">Delete</button>
               <button type="submit" class="btn btn-danger pull-right" (click)="editDoctor(elicense.value,eemail.value, ename.value, espe_id.value, eid.value, epwd.value)" >Change</button>
               <div class="clearfix"></div>
 

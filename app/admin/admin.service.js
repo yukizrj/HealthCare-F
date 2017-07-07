@@ -81,6 +81,15 @@ var AdminService = (function () {
             return res.json();
         });
     };
+    AdminService.prototype.delete = function (eid) {
+        var params = new http_1.URLSearchParams();
+        params.set("id", eid);
+        var body = params;
+        return this.http.post('http://localhost:9090/doctor-delete', body)
+            .map(function (res) {
+            return res.json();
+        });
+    };
     AdminService.prototype.schedule = function (license, totalstring) {
         var params = new http_1.URLSearchParams();
         params.set("schedule", totalstring);

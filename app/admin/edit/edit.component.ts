@@ -14,6 +14,7 @@ export class EditComponent implements OnInit {
   doc_pwd:string;
   doc_license:string;
   editresult:string;
+  deleteresult:string;
   constructor(private adminservice:AdminService, private route:Router) { }
   ngOnInit() {
     this.doc_id=this.adminservice.doctor_detail.doc_id;
@@ -31,6 +32,13 @@ export class EditComponent implements OnInit {
   }
   back(){
     this.route.navigate(['./admin']);
+  }
+
+  delete(eid:string){
+    this.adminservice.delete(eid).subscribe((data)=>{
+      this.deleteresult=data;
+    })
+
   }
 
 

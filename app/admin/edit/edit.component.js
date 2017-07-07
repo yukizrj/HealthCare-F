@@ -32,6 +32,12 @@ var EditComponent = (function () {
     EditComponent.prototype.back = function () {
         this.route.navigate(['./admin']);
     };
+    EditComponent.prototype.delete = function (eid) {
+        var _this = this;
+        this.adminservice.delete(eid).subscribe(function (data) {
+            _this.deleteresult = data;
+        });
+    };
     EditComponent = __decorate([
         core_1.Component({
             selector: 'app-edit',

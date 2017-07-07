@@ -105,6 +105,20 @@ export class AdminService {
             )
 
     }
+
+    delete(eid){
+        let params:URLSearchParams=new URLSearchParams();
+        params.set("id",eid);
+        let body=params;
+        return this.http.post('http://localhost:9090/doctor-delete', body)
+            .map(
+                (res:Response)=>
+                {
+                    return res.json();
+                }
+            )
+    }
+
     schedule(license,totalstring){
         let params:URLSearchParams=new URLSearchParams();
         params.set("schedule",totalstring);
