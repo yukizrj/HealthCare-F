@@ -28,11 +28,6 @@ var DeletedoctorComponent = (function () {
         var _this = this;
         this.adminservice.geteditDoctor(slicense).subscribe(function (data) {
             console.log('Doctor details ' + data);
-            /*this.adminservice.editdata=data;
-            this.adminservice.li=this.editdata.charAt(0);
-            this.adminservice.liname=this.editdata.charAt(2);
-            this.adminservice.liemail=this.editdata.charAt(1);
-            this.route.navigate(["/admin./edit"]);*/
             _this.route.navigate(["./admin/edit"]);
         });
     };

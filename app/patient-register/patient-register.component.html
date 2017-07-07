@@ -9,18 +9,18 @@
           <p class="category">Enter your information</p>
         </div>
         <div class="card-content">
-          <form>
+          <form #f="ngForm">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Name</label>
-                  <input type="text" class="form-control" #pname required="required">
+                  <input type="text" class="form-control" #pname required (input)="null">
                 </div>
               </div>
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Email address</label>
-                  <input type="email" class="form-control" #pemail required="required">
+                  <input type="email" class="form-control" #pemail required (input)="null">
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Password</label>
-                  <input type="password"  class="form-control" #ppwd required="required">
+                  <input type="password"  class="form-control" #ppwd required (input)="null">
                 </div>
               </div>
             </div>
@@ -36,7 +36,7 @@
               <div class="col-md-12">
                 <div class="form-group form-black  is-empty">
                   <label class="control-label">Date of Birth</label>
-                  <input type="date" class="form-control" #dob required="required">
+                  <input type="date" class="form-control" #dob required (input)="null">
                 </div>
               </div>
             </div>

@@ -8,12 +8,12 @@
           <p class="category">Enter doctor information</p>
         </div>
         <div class="card-content">
-          <form>
+          <form #doctorf="ngForm">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Name</label>
-                  <input type="text" class="form-control" #dname required="required" >
+                  <input type="text" class="form-control" #dname required (input)="null">
                  <!-- <div *ngIf="name.errors|| (name.dirty || name.touched)"
                        class="alert alert-danger">
                 <div [hidden]="!name.dirty">
@@ -27,7 +27,7 @@
                 <div class="col-md-12">
                   <div class="form-group form-black  is-empty">
                     <label class="control-label">License No</label>
-                    <input type="text" class="form-control" #dlicense required="required">
+                    <input type="text" class="form-control" #dlicense required (input)="null">
                   </div>
                 </div>
               </div>
@@ -35,7 +35,7 @@
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Email address</label>
-                  <input type="email" class="form-control" #demail>
+                  <input type="email" class="form-control" #demail required (input)="null">
                 </div>
             </div>
               </div>
@@ -43,7 +43,7 @@
               <div class="col-md-12">
                 <div class="form-group form-black is-empty">
                   <label class="control-label">Password</label>
-                  <input type="password" value="0000" class="form-control" id="pwd" #pwd required="required" minlength="4">
+                  <input type="password" value="0000" class="form-control" id="pwd" #pwd required minlength="4" (input)="null">
                   <span *ngIf="pwd.errors && (pwd.dirty || pwd.touched)"
                        class="alert alert-danger">
                     <div [hidden]="!pwd.errors.minlength">
@@ -71,7 +71,7 @@
                 </div>
               </div>
             <button type="reset" class="btn btn-danger pull-left" value="Reset">Reset</button>
-            <button type="submit"  class="btn btn-danger pull-right"  (click)="addDoctor(demail.value, dlicense.value, dname.value, pwd.value, spe_id.value)" >Add</button>
+            <button type="submit" [disabled]="!dname.value || !dlicense.value || !demail.value" class="btn btn-danger pull-right"  (click)="addDoctor(demail.value, dlicense.value, dname.value, pwd.value, spe_id.value)" >Add</button>
             <div class="clearfix"></div>
 
           </form>
