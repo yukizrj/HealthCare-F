@@ -9,7 +9,7 @@ export class WeekdayPipe implements PipeTransform {
         if(value=="2"){
             return "Tuesday";
         }
-        if(value=="3"){
+        if(value=="3") {
             return "Wednesday";
         }
         if(value=="4"){
