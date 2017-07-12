@@ -44,6 +44,7 @@ import {DoctorService} from "./doctors/doctor.service";
 import {EqualValidator} from "./equal-validator.directice";
 import {WeekdayPipe} from "./weekday.pipe";
 import {ViewScheduleComponent} from "./doctors/view-schedule/view-schedule.component";
+import {CanDeactivateService} from "./admin/edit/can-deactivate-guard.service";
 
 @NgModule({
     imports:      [
@@ -89,7 +90,8 @@ import {ViewScheduleComponent} from "./doctors/view-schedule/view-schedule.compo
         PatientloginService,
         PatientService,
         DoctorloginService,
-        DoctorService
+        DoctorService,
+        CanDeactivateService
     ],
     bootstrap:    [ AppComponent ]
 })

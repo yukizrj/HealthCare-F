@@ -26,6 +26,7 @@ import {EditComponent} from "./admin/edit/edit.component";
 import {DeletePatientComponent} from "./patient/delete-patient/delete-patient.component";
 import {BookAppointmentComponent} from "./patient/book-appointment/book-appointment.component";
 import {ViewScheduleComponent} from "./doctors/view-schedule/view-schedule.component";
+import {CanDeactivateService} from "./admin/edit/can-deactivate-guard.service";
 const appRoutes:Routes=[
     {path:'',component:HomeComponent},
     {path:'doctor-login',component:DoctorLoginComponent},
@@ -62,7 +63,7 @@ const appRoutes:Routes=[
             {path:'deletedoctor',component:DeletedoctorComponent},
             {path:'scheduledoctor',component:ScheduledoctorComponent},
             {path:'approveleave', component:ApproveleaveComponent},
-            {path:'edit', component:EditComponent},
+            {path:'edit',canDeactivate:[CanDeactivateService], component:EditComponent},
 
     ]
         },

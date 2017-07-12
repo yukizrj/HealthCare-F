@@ -35,6 +35,7 @@ var edit_component_1 = require("./admin/edit/edit.component");
 var delete_patient_component_1 = require("./patient/delete-patient/delete-patient.component");
 var book_appointment_component_1 = require("./patient/book-appointment/book-appointment.component");
 var view_schedule_component_1 = require("./doctors/view-schedule/view-schedule.component");
+var can_deactivate_guard_service_1 = require("./admin/edit/can-deactivate-guard.service");
 var appRoutes = [
     { path: '', component: home_component_1.HomeComponent },
     { path: 'doctor-login', component: doctor_login_component_1.DoctorLoginComponent },
@@ -66,7 +67,7 @@ var appRoutes = [
             { path: 'deletedoctor', component: deletedoctor_component_1.DeletedoctorComponent },
             { path: 'scheduledoctor', component: scheduledoctor_component_1.ScheduledoctorComponent },
             { path: 'approveleave', component: approveleave_component_1.ApproveleaveComponent },
-            { path: 'edit', component: edit_component_1.EditComponent },
+            { path: 'edit', canDeactivate: [can_deactivate_guard_service_1.CanDeactivateService], component: edit_component_1.EditComponent },
         ]
     },
     { path: 'not-found', component: page_not_found_component_1.PageNotFoundComponent },

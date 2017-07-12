@@ -15,6 +15,7 @@ var EditComponent = (function () {
     function EditComponent(adminservice, route) {
         this.adminservice = adminservice;
         this.route = route;
+        this.changesSaved = false;
     }
     EditComponent.prototype.ngOnInit = function () {
         this.doc_id = this.adminservice.doctor_detail.doc_id;
@@ -28,6 +29,13 @@ var EditComponent = (function () {
         this.adminservice.editDoctor(elicense, eemail, ename, espe_id, eid, epwd).subscribe(function (data) {
             _this.editresult = data;
         });
+        this.changesSaved = true;
+    };
+    EditComponent.prototype.canDeactivate = function () {
+        if ((this.elicense != '' || this.eemail != '' || this.ename != ''
+            || this.espe_id != '' || this.eid != '' || this.epwd != '') && !this.changesSaved) {
+            return confirm("Do u want to discard changes?");
+        }
     };
     EditComponent.prototype.back = function () {
         this.route.navigate(['./admin']);

@@ -51,6 +51,7 @@ var doctor_service_1 = require("./doctors/doctor.service");
 var equal_validator_directice_1 = require("./equal-validator.directice");
 var weekday_pipe_1 = require("./weekday.pipe");
 var view_schedule_component_1 = require("./doctors/view-schedule/view-schedule.component");
+var can_deactivate_guard_service_1 = require("./admin/edit/can-deactivate-guard.service");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -99,7 +100,8 @@ var AppModule = (function () {
                 patient_login_service_1.PatientloginService,
                 patient_service_1.PatientService,
                 doctor_login_service_1.DoctorloginService,
-                doctor_service_1.DoctorService
+                doctor_service_1.DoctorService,
+                can_deactivate_guard_service_1.CanDeactivateService
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
