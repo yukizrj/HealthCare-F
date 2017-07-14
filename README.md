@@ -1,5 +1,5 @@
 # DoctorApp-F
-DoctorApp Frontend using Angular2. (Backend in other repository)
+DoctorApp Frontend for hospital using including patient reservation, admin schedule doctors work time. (Backend in other repository)
 
 ## Terminal Commands
 
