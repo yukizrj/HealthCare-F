@@ -33,7 +33,7 @@ const appRoutes:Routes=[
     {path:'patient-login',component:PatientLoginComponent},
     {path:'patient-register',component:PatientRegisterComponent},
     {path:'admin-login',component:AdminLoginComponent},
-    {path:'patient',component:PatientComponent,
+    /*{path:'patient',component:PatientComponent,
         children:[
 
             {path:'patient-profile',component:PatientProfileComponent},
@@ -42,7 +42,7 @@ const appRoutes:Routes=[
             {path:'delete-patient',component:DeletePatientComponent},
             {path:'book-appointment',component:BookAppointmentComponent},
         ]
-    },
+    },*/
     {path:'doctors',component:DoctorsComponent,
         children:[
 
@@ -67,8 +67,8 @@ const appRoutes:Routes=[
 
     ]
         },
-    {path:'not-found',component:PageNotFoundComponent},
-    {path:'**',redirectTo:'not-found'}
+/*    {path:'not-found',component:PageNotFoundComponent},
+    {path:'**',redirectTo:'not-found'}*/
 ];
 
 

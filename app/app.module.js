@@ -24,10 +24,6 @@ var doctor_view_profile_component_1 = require("./doctors/doctor-view-profile/doc
 var doctor_view_appointment_component_1 = require("./doctors/doctor-view-appointment/doctor-view-appointment.component");
 var doctor_profile_component_1 = require("./doctors/doctor-profile/doctor-profile.component");
 var approveleave_component_1 = require("./admin/approveleave/approveleave.component");
-var view_appointment_component_1 = require("./patient/view-appointment/view-appointment.component");
-var patient_profile_component_1 = require("./patient/patient-profile/patient-profile.component");
-var new_appointment_component_1 = require("./patient/new-appointment/new-appointment.component");
-var patient_component_1 = require("./patient/patient.component");
 var patient_login_component_1 = require("./patient-login/patient-login.component");
 var admin_login_component_1 = require("./admin-login/admin-login.component");
 var patient_register_component_1 = require("./patient-register/patient-register.component");
@@ -43,15 +39,14 @@ var patient_register_service_1 = require("./patient-register/patient-register.se
 var memory_service_1 = require("./memory.service");
 var patient_login_service_1 = require("./patient-login/patient-login.service");
 var edit_component_1 = require("./admin/edit/edit.component");
-var delete_patient_component_1 = require("./patient/delete-patient/delete-patient.component");
 var patient_service_1 = require("./patient/patient.service");
-var book_appointment_component_1 = require("./patient/book-appointment/book-appointment.component");
 var doctor_login_service_1 = require("./doctor-login/doctor-login.service");
 var doctor_service_1 = require("./doctors/doctor.service");
 var equal_validator_directice_1 = require("./equal-validator.directice");
 var weekday_pipe_1 = require("./weekday.pipe");
 var view_schedule_component_1 = require("./doctors/view-schedule/view-schedule.component");
 var can_deactivate_guard_service_1 = require("./admin/edit/can-deactivate-guard.service");
+var patient_module_1 = require("./patient/patient.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -62,7 +57,8 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 footer_module_1.FooterModule,
-                app_routes_1.AppRoutingModule
+                app_routes_1.AppRoutingModule,
+                patient_module_1.PatientModule
             ],
             declarations: [app_component_1.AppComponent, home_component_1.HomeComponent,
                 adddoctor_component_1.AdddoctorComponent,
@@ -78,16 +74,16 @@ var AppModule = (function () {
                 doctor_view_appointment_component_1.DoctorViewAppointmentComponent,
                 doctor_profile_component_1.DoctorProfileComponent,
                 approveleave_component_1.ApproveleaveComponent,
-                view_appointment_component_1.ViewAppointmentComponent,
-                patient_profile_component_1.PatientProfileComponent,
-                new_appointment_component_1.NewAppointmentComponent,
-                patient_component_1.PatientComponent,
+                /* ViewAppointmentComponent,
+                  PatientProfileComponent,
+                  NewAppointmentComponent,
+                  PatientComponent,*/
                 patient_login_component_1.PatientLoginComponent,
                 admin_login_component_1.AdminLoginComponent,
                 patient_register_component_1.PatientRegisterComponent,
                 edit_component_1.EditComponent,
-                delete_patient_component_1.DeletePatientComponent,
-                book_appointment_component_1.BookAppointmentComponent,
+                /* DeletePatientComponent,
+                  BookAppointmentComponent,*/
                 view_schedule_component_1.ViewScheduleComponent,
                 equal_validator_directice_1.EqualValidator,
                 weekday_pipe_1.WeekdayPipe
@@ -101,7 +97,7 @@ var AppModule = (function () {
                 patient_service_1.PatientService,
                 doctor_login_service_1.DoctorloginService,
                 doctor_service_1.DoctorService,
-                can_deactivate_guard_service_1.CanDeactivateService
+                can_deactivate_guard_service_1.CanDeactivateService,
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

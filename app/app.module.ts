@@ -45,6 +45,8 @@ import {EqualValidator} from "./equal-validator.directice";
 import {WeekdayPipe} from "./weekday.pipe";
 import {ViewScheduleComponent} from "./doctors/view-schedule/view-schedule.component";
 import {CanDeactivateService} from "./admin/edit/can-deactivate-guard.service";
+import {PatientModule} from "./patient/patient.module";
+
 
 @NgModule({
     imports:      [
@@ -52,7 +54,9 @@ import {CanDeactivateService} from "./admin/edit/can-deactivate-guard.service";
         FormsModule,
         HttpModule,
         FooterModule,
-        AppRoutingModule
+        AppRoutingModule,
+        PatientModule
+
     ],
     declarations: [ AppComponent, HomeComponent,
         AdddoctorComponent,
@@ -68,16 +72,16 @@ import {CanDeactivateService} from "./admin/edit/can-deactivate-guard.service";
         DoctorViewAppointmentComponent,
         DoctorProfileComponent,
         ApproveleaveComponent,
-        ViewAppointmentComponent,
+      /* ViewAppointmentComponent,
         PatientProfileComponent,
         NewAppointmentComponent,
-        PatientComponent,
+        PatientComponent,*/
         PatientLoginComponent,
         AdminLoginComponent,
         PatientRegisterComponent,
         EditComponent,
-        DeletePatientComponent,
-        BookAppointmentComponent,
+      /* DeletePatientComponent,
+        BookAppointmentComponent,*/
         ViewScheduleComponent,
         EqualValidator,
         WeekdayPipe
@@ -91,7 +95,9 @@ import {CanDeactivateService} from "./admin/edit/can-deactivate-guard.service";
         PatientService,
         DoctorloginService,
         DoctorService,
-        CanDeactivateService
+        CanDeactivateService,
+
+
     ],
     bootstrap:    [ AppComponent ]
 })
